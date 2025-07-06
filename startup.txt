@@ -1,0 +1,2 @@
+# Comando de inicio para Azure App Service
+python train_model.py && uvicorn api:app --host 0.0.0.0 --port 8000
