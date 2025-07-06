@@ -1,0 +1,100 @@
+{
+  "app": {
+    "title": "Detector de Depresión Estudiantil",
+    "subtitle": "Evaluación predictiva basada en inteligencia artificial",
+    "version": "1.0.0"
+  },
+  "api": {
+    "baseUrl": "https://depression-api-student-ebbkctaba3e4ceej.eastus-01.azurewebsites.net",
+    "endpoints": {
+      "predict": "/predict",
+      "health": "/health"
+    },
+    "timeout": 30000,
+    "retries": 3
+  },
+  "ui": {
+    "theme": {
+      "primaryColor": "#667eea",
+      "secondaryColor": "#764ba2",
+      "successColor": "#27ae60",
+      "dangerColor": "#e74c3c",
+      "warningColor": "#f39c12"
+    },
+    "animations": {
+      "enabled": true,
+      "duration": 300
+    },
+    "features": {
+      "demoMode": true,
+      "downloadReports": true,
+      "keyboardShortcuts": true,
+      "autoSave": false
+    }
+  },
+  "form": {
+    "validation": {
+      "realTime": true,
+      "showErrors": true,
+      "highlightFields": true
+    },
+    "defaults": {
+      "academicPressure": 3,
+      "studySatisfaction": 3,
+      "workPressure": 3,
+      "financialStress": 3,
+      "sleepDuration": 7
+    },
+    "ranges": {
+      "age": { "min": 16, "max": 30 },
+      "cgpa": { "min": 0, "max": 10 },
+      "sleepDuration": { "min": 4, "max": 12 },
+      "pressure": { "min": 1, "max": 5 }
+    }
+  },
+  "results": {
+    "thresholds": {
+      "highRisk": 0.5,
+      "moderateRisk": 0.3
+    },
+    "recommendations": {
+      "maxItems": 6,
+      "personalized": true
+    }
+  },
+  "help": {
+    "emergencyNumbers": [
+      {
+        "name": "Teléfono de la Esperanza",
+        "number": "717 003 717",
+        "country": "España",
+        "available": "24/7"
+      },
+      {
+        "name": "Cruz Roja",
+        "number": "902 22 22 92",
+        "country": "España",
+        "available": "24/7"
+      }
+    ],
+    "resources": [
+      {
+        "name": "Confederación Salud Mental España",
+        "url": "https://salud-mental.org",
+        "type": "website"
+      },
+      {
+        "name": "Fundación ANAR",
+        "url": "https://anar.org",
+        "type": "website"
+      }
+    ]
+  },
+  "meta": {
+    "description": "Sistema de detección temprana de depresión en estudiantes universitarios usando machine learning",
+    "keywords": ["depresión", "estudiantes", "salud mental", "machine learning", "detección temprana"],
+    "author": "Proyecto Final - Análisis de Datos",
+    "created": "2025-01-07",
+    "lastUpdated": "2025-01-07"
+  }
+}

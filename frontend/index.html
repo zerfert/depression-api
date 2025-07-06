@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Depresión Estudiantil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-brain"></i>
+                <h1>Detector de Depresión Estudiantil</h1>
+                <p>Evaluación predictiva basada en inteligencia artificial</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="form-container">
+                <form id="depressionForm" class="assessment-form">
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Información Personal</h2>
+                        
+                        <div class="form-group">
+                            <label for="age">Edad:</label>
+                            <input type="number" id="age" name="age" min="16" max="30" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Género:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="Male">Masculino</option>
+                                <option value="Female">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Información Académica</h2>
+                        
+                        <div class="form-group">
+                            <label for="academicPressure">Presión Académica (1=Muy Baja, 5=Muy Alta):</label>
+                            <div class="slider-container">
+                                <input type="range" id="academicPressure" name="academicPressure" 
+                                       min="1" max="5" value="3" class="slider">
+                                <span class="slider-value" id="academicPressureValue">3</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cgpa">CGPA (Promedio Académico):</label>
+                            <input type="number" id="cgpa" name="cgpa" min="0" max="10" step="0.1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studySatisfaction">Satisfacción con los Estudios (1=Muy Insatisfecho, 5=Muy Satisfecho):</label>
+                            <div class="slider-container">
+                                <input type="range" id="studySatisfaction" name="studySatisfaction" 
+                                       min="1" max="5" value="3" class="slider">
+                                <span class="slider-value" id="studySatisfactionValue">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2><i class="fas fa-briefcase"></i> Información Laboral</h2>
+                        
+                        <div class="form-group">
+                            <label for="profession">Profesión/Campo de Estudio:</label>
+                            <select id="profession" name="profession" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="Student">Estudiante</option>
+                                <option value="Engineer">Ingeniero</option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Teacher">Profesor</option>
+                                <option value="Digital Marketer">Marketing Digital</option>
+                                <option value="Lawyer">Abogado</option>
+                                <option value="Artist">Artista</option>
+                                <option value="Business Analyst">Analista de Negocios</option>
+                                <option value="Other">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="workPressure">Presión Laboral (1=Muy Baja, 5=Muy Alta):</label>
+                            <div class="slider-container">
+                                <input type="range" id="workPressure" name="workPressure" 
+                                       min="1" max="5" value="3" class="slider">
+                                <span class="slider-value" id="workPressureValue">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2><i class="fas fa-heart"></i> Bienestar y Estilo de Vida</h2>
+                        
+                        <div class="form-group">
+                            <label for="sleepDuration">Duración del Sueño (en horas):</label>
+                            <input type="number" id="sleepDuration" name="sleepDuration" min="4" max="12" step="0.5" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dietaryHabits">Hábitos Alimentarios:</label>
+                            <select id="dietaryHabits" name="dietaryHabits" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="Healthy">Saludables</option>
+                                <option value="Moderate">Moderados</option>
+                                <option value="Unhealthy">No Saludables</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="suicidalThoughts">¿Has tenido pensamientos suicidas?</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="suicidalThoughts" value="Yes" required>
+                                    <span>Sí</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="suicidalThoughts" value="No" required>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="familyHistory">¿Tienes historial familiar de enfermedades mentales?</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="familyHistory" value="Yes" required>
+                                    <span>Sí</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="familyHistory" value="No" required>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2><i class="fas fa-dollar-sign"></i> Situación Financiera</h2>
+                        
+                        <div class="form-group">
+                            <label for="financialStress">Estrés Financiero (1=Muy Bajo, 5=Muy Alto):</label>
+                            <div class="slider-container">
+                                <input type="range" id="financialStress" name="financialStress" 
+                                       min="1" max="5" value="3" class="slider">
+                                <span class="slider-value" id="financialStressValue">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="clearForm" class="btn btn-secondary">
+                            <i class="fas fa-eraser"></i> Limpiar Formulario
+                        </button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary">
+                            <i class="fas fa-brain"></i> Evaluar Riesgo de Depresión
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal para mostrar resultados -->
+            <div id="resultModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="resultContent">
+                        <!-- Los resultados se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Analizando datos...</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Detector de Depresión Estudiantil. Herramienta de apoyo educativo.</p>
+            <p><small>Este no es un diagnóstico médico. Consulte a un profesional de la salud mental.</small></p>
+            <p><a href="about.html" style="color: #667eea; text-decoration: none;"><i class="fas fa-info-circle"></i> Acerca del Proyecto</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
